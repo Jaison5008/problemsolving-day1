@@ -1,0 +1,103 @@
+const arr=(array)=>{ 
+   let largeNum=array[0] 
+   for(let i=1;i<array.length;i++) 
+   {  
+       if(array[i]>largeNum){  
+           largeNum=array[i]
+           
+       }
+   }
+    
+  return largeNum  
+} 
+console.log(arr([5,20,38,19,30,24,34,3])) 
+
+
+
+
+const second =(array)=>{ 
+    let large=array[0]
+    let secondlarge=array[1] 
+    if(large<secondlarge) 
+    array[1]=large 
+    array[0]=secondlarge 
+    
+    for(let i=2;i<array.length;i++){ 
+        
+       if( array[i]>large){  
+           secondlarge=large 
+           large=array[i]
+           
+       }else if(array[i]>secondlarge&&array[i]<large) 
+       {  
+           
+           array[i] =secondlarge 
+           
+       }
+       
+        
+    }
+    return secondlarge
+    
+}
+
+
+console.log(second([22,33,44,55,11,22,77,99,110]))
+
+
+
+const num =(x)=>{ 
+     if(x===2 || x==1){
+    return true
+     } 
+     else if (x%2==0) { 
+         return false
+     } 
+     else{ 
+         for(i=3 ;i*i<x;i+=2){ 
+           if(x%i==0){ 
+               return false
+         
+         } 
+     }  
+     }
+     return true
+ }
+ 
+ 
+ 
+console.log(num(7)); 
+
+
+const fibo=(n)=>{
+    if (n <= 1) {
+        return n;
+    }
+
+    let prev = 0;
+    let curr = 1;
+
+    for (let i = 2; i <= n; i++) {
+        let next = prev + curr;
+        prev = curr;
+        curr = next;
+    }
+
+    return curr;
+}
+
+
+console.log(fibo(1)); 
+
+
+
+
+const factorial=(x)=>{ 
+    let result=1
+  for (let i=2;i<=x;i++)  {  
+      result =result*i
+      
+  } 
+  return result
+}
+console.log(factorial(5))
